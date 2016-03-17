@@ -1,0 +1,139 @@
+\documentclass[msc,m,palatino,oneside,12pt]{softlang}
+
+% Use one of the following terms and replace msc as argument in documentclass:
+% Master of Science thesis: msc
+% Bachelor of Science thesis: bsc
+% Projektpraktikum: pp
+% Diplomarbeit: diplom
+% Proseminar: prosem
+% Seminararbeit: sem
+% Skript: scr
+% Studienarbeit: sa
+
+% Use m(Männlich) or w(Weiblich) as argument in documentclass
+% 12pt is the size of the text
+% oneside is for normal text layout, the text is centered
+% twoside prints the text assymmetric
+% palatino is tzhe font of the letters
+
+
+% BibLatex for Bibliography
+% For Citation- and Bibliographystyles refer to the biblatex documentation
+% Standard is numeric both
+\usepackage{biblatex}
+\addbibresource{sources.bib}
+
+% This are optional packages, to use them remove the %:
+\usepackage{booktabs} %for optimicing tabulars
+%\usepackage{bibgerm} % for german BibTex styles
+\usepackage{wrapfig}% for wrapping text arount tables and figures
+\usepackage{multicol} % for Intermix single and multiple columns
+\usepackage{enumitem} % for more options in the enumerate environment
+\usepackage{subcaption} % for subfigures
+\usepackage[font=footnotesize,labelfont=bf,labelsep=space]{caption} % for more formatting captions
+\usepackage{tikz} % for PGF/TikZ support
+\usepackage{tabularx} % for advanced tables
+\usepackage{listings} % for code listings
+\usepackage{multirow} % for columns spanning multiple rows in tables
+
+% Settings for the listings package, for additional settings refer to the listings package documentation
+\lstset{
+	breaklines=true, % Autozeilenumbruch bei langen Codezeilen
+	breakatwhitespace=true, % Erlaube Zeilenumbruch nur bei Whitespace
+	numbers = left, % Zeilennummern
+	tabsize = 3, % Tabulatorabstand
+	frame = single % Rahmen um Sourcecode listings
+	}
+
+% Bestimmt die Tiefe in der die Kapitel nummeriert werden
+\setcounter{secnumdepth}{3}
+
+% Bestimmt die Tiefe in der die Kapitel im Inhaltsverzeichnis erscheinen
+\setcounter{tocdepth}{2}
+
+% Set headheight to 15 pt to avoid fancyhdr warning
+\setlength{\headheight}{15pt}
+
+\author{<Name des/r Studierenden>}
+\title{<Titel der Arbeit>}
+\studiengang{<Studiengang>}
+
+\makeatletter
+%% Set the metadata for the PDF document and the colors of the internal links.
+%% All colors are set to black in order to avoid unnecessary colorfulness.
+\hypersetup{
+	pdftitle    = {\@title},
+	pdfauthor   = {\@author},
+	pdfkeywords = {keyword1,keyword2,...,keywordn}, % Add some key words if you want.
+	colorlinks  = true,
+	unicode     = true,
+	linkcolor   = black,
+	citecolor   = black,
+	filecolor   = black,
+	urlcolor    = blue,
+}
+\makeatother
+
+
+\erstgutachter{Prof.\ Dr.\ Ralf Lämmel}
+\erstgutachterInfo{Institut für Informatik}
+
+\zweitgutachter{Msc. Marcel Heinz}
+\zweitgutachterInfo{Institut für Informatik}
+
+% \drittgutachter{Hakan Aksu}
+% \drittgutachterInfo{Institut für Informatik}
+
+
+%% Beware of widows and orphans.
+\clubpenalty         = 10000
+\widowpenalty        = 10000
+\displaywidowpenalty = 10000
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\pagenumbering{Alph}
+\pagestyle{empty}
+
+\maketitle
+\cleardoublepage
+
+\input{abstract.tex} % Einfügen des Abstracts
+\cleardoublepage
+
+%\pagestyle{headings}
+\pagestyle{fancy}
+
+\fancyfoot{}% Unten nichts
+%\fancyhead[RE]{\itshape\leftmark}  % Rechts auf geraden Seiten=innen
+%\fancyhead[RO]{\itshape\rightmark} % Links auf ungeraden Seiten=außen
+\fancyhead[R]{\thepage}        % nur rechts
+
+\pagenumbering{roman}
+\tableofcontents
+
+\cleardoublepage
+
+\listoffigures   % fuer ein eventuelles Abbildungsverzeichnis
+\cleardoublepage
+
+% \listoftables % Für ein Tabellenverzeichnis
+% \cleardoublepage
+
+% \lstlistoflistings % Für ein Verzeichnis der Listings
+% \cleardoublepage
+
+\pagenumbering{arabic}
+
+
+% Hier kommt jetzt der eigentliche Text der Arbeit
+\input{content.tex}
+\cleardoublepage
+%\bibliographystyle{alphadin}
+\printbibliography
+\end{document}
+

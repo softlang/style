@@ -1,0 +1,86 @@
+\chapter{Einleitung}
+
+\section{Zitate einfügen}\label{sec:citation}
+\cite{lammel2008google}
+\cite{lammel2015software}
+
+\section{Bilder einfügen}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.60\textwidth]{images/image.jpg}
+	\caption[Text im Abbildungsverzeichnis]{Text unter Abbildung}
+	\label{fig:image}
+\end{figure}
+
+\section{Referenzieren}
+Referenz zu einem Kapitel: \ref{sec:citation}
+
+Referenz zu einem Bild: \ref{fig:image}
+
+\section{Tabellen einfügen}
+
+Schönere Tabellen als die \LaTeX-Standardtabellen lassen sich mit dem Paket {\tt booktabs} erzeugen. Dieses Paket ist in diesem Framework schon eingebunden. Ein Beispiel für eine solche schöne Tabelle zeigt Tabelle~\ref{tab:myVeryFirstTable}.
+
+\begin{table}
+	\center
+	\begin{tabular}{l l l l}
+		\toprule
+		\bfseries{Spaltenüberschrift~1} & \bfseries{Spaltenüberschrift~2} & \bfseries{Spaltenüberschrift~3} \\
+		\midrule
+		Zelle~$(1,1)$                   & Zelle~$(1,2)$                   & Zelle~$(1,3)$                   \\
+		Zelle~$(2,1)$                   & Zelle~$(2,2)$                   & Zelle~$(2,3)$                   \\
+		Zelle~$(3,1)$                   & Zelle~$(3,2)$                   & Zelle~$(3,3)$                   \\
+		\bottomrule
+	\end{tabular}
+	\caption
+  	[Kurzer Text im Tabellenverzeichnis]
+  	{Diese Tabelle kann auch etwas umfangreicher beschrieben werden. In diesem Fall bietet es sich an, für das Tabellenverzeichnis einen kürzeren Text zu definieren.}
+  \label{tab:myVeryFirstTable}
+\end{table}
+
+Soll eine Zelle einer Tabelle über zwei oder mehr Zeilen laufen, bietet sich die Verwendung des Pakets {\tt multirow} an. Ein Beispiel für eine solche Tabelle zeigt Tabelle~\ref{tab:myMultiRowTable}.
+
+\begin{table}
+	\center
+	\begin{tabular}{l l l l}
+		\toprule
+		\bfseries{Spalte~1} & \bfseries{Spalte~2} & \bfseries{Spalte~3} & \bfseries{Spalte~4} \\
+		\midrule
+		\multirow{2}{*}{Zelle~$\alpha$} & Zelle~$(1,2)$ & Zelle~$(1,3)$ & Zelle~$(1,4)$  \\
+	                                  & Zelle~$(2,2)$ & Zelle~$(2,3)$ & Zelle~$(2,4)$  \\
+		\midrule
+		\multirow{2}{*}{Zelle~$\beta$}  & Zelle~$(3,2)$ & Zelle~$(3,3)$ & Zelle~$(3,4)$  \\
+	                                  & Zelle~$(4,2)$ & Zelle~$(4,3)$ & Zelle~$(4,4)$  \\
+		\bottomrule
+	\end{tabular}
+	\caption
+  	{Tabelle mit {\tt multirow}s.}
+  \label{tab:myMultiRowTable}
+\end{table}
+
+\section{Code einfügen}
+Sourcecode lässt sich gut über die Umgebung lstlisting einfügen, man kann entweder die Sprache über lstset oder
+direkt über die Umgebung setzen. Einige Optionen wie Rahmen um den Code und Zeilennummern wurden standardmäßig in der ausarbeitung.tex gesetzt. 
+
+\lstset{language=Haskell}
+\begin{lstlisting}[language=Haskell,caption=Lineare Suche]
+search::Eq a => [a] -> a -> Bool
+search [] _ = False
+search (x:xs) a = 
+	if x /= a
+	then search xs a
+	else True 
+\end{lstlisting}
+
+Mit lstinputlisting kann eine Sourcecode File importiert werden, über firstline und lastline kann kontrolliert werden welche Zeilen gedruckt werden.
+\lstinputlisting[firstline=5,lastline=7,caption=Quicksort]{code/quicksort.hs}
+
+\subsection{Unterabschnitt}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\subsubsection{Unterunterabschnitt}
+
+Generell sollte eine vierte Überschriftenebene wie diese hier vermieden werden.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
