@@ -18,3 +18,8 @@ Each tex file has comments describing the purpose of the file:
 -images: images for your document to include
 -content: content folder, each tex file is a chapter of the document
 
+Instructions (Mac,Linux):
+1. Install a LaTeX distribution
+2. Edit tex files
+3. Run 'make'
+Make produces a new ausarbeitung.pdf and some auxiliary files. You can delete these auxiliary files.
