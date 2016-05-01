@@ -254,13 +254,18 @@
     \cleardoublepage
 
 		\ifthenelse{\boolean{@isBA}\or\boolean{@isMA}\or\boolean{@isDA}}{
-		    \textbf{Erklärung}
+			
+			\huge
+			\textbf{Erklärung}
+			\normalsize
 		    \newline\newline\newline\newline\newline\newline
   		  \thispagestyle{empty}
 	    	\noindent
-    		Ich versichere, dass ich die vorliegende Arbeit selbständig
-    		verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel
-    		benutzt habe.\\
+    		Hiermit bestätige ich, dass die vorliegende Arbeit von mir selbständig verfasst wurde und ich
+			keine anderen als die angegebenen Hilfsmittel – insbesondere keine im Quellenverzeichnis
+			nicht benannten Internet–Quellen – benutzt habe und die Arbeit von mir vorher nicht in einem
+			anderen Prüfungsverfahren eingereicht wurde. Die eingereichte schriftliche Fassung
+			entspricht der auf dem elektronischen Speichermedium (CD-Rom).\\
     		\vspace*{2ex}
 
     		\begin{flushleft}
