@@ -176,12 +176,12 @@
     \hspace*{-1.7cm}
     \ifthenelse{\boolean{@isExtern}}{ % mit externem Logo
         \begin{tabular*}{\linewidth}{p{.9cm}>{\PBS\raggedleft}p{5cm}@{\hspace{2cm}}p{6cm}}
-            \@externLogo & & {\includegraphics[height=2.14cm]{logos/UniLogo}} \\[-.1ex]
+            \@externLogo & & {\includegraphics[height=2.14cm]{logos/UniLogoDeutsch.png}} \\[-.1ex]
             & \footnotesize \@externName &
         \end{tabular*}
     }{ % nur Uni-Logo
         \begin{tabular*}{\linewidth}{p{.9cm}>{\PBS\raggedleft}p{5cm}@{\hspace{2cm}}p{6cm}}
-            & & {\includegraphics[height=2.14cm]{logos/UniLogo}}
+            & & {\includegraphics[height=2.14cm]{logos/UniLogoDeutsch.png}}
         \end{tabular*}
     }
     \normalsize \vspace*{1.5cm}
